@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        html {
+  box-sizing: border-box;
+}
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+.container {
+  display: flex;
+  max-width: 960px;
+  background-color: #eaeaea;
+  justify-content: space-between;
+  margin: 20px auto;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1)
+}
+.profile {
+  flex-basis: 35%;
+  background-color: #39383a;
+  color: #ababab;
+}
+.profile-photo {
+  height: 270px;
+  background-image: "aman.jpg";
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.profile-info {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+.profile-text {
+  font-size: 13px;
+  line-height: 24.19px;
+  margin-bottom: 50px;
+}
+.heading {
+  margin: 0;
+  padding-bottom: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.heading-light {
+  color: #ffffff;
+  border-bottom: 2px #5a5a5a dashed;
+}
+.contacts {
+  margin-bottom: 70px;
+}
+.contacts-title {
+  color: #fff;
+  margin-bottom: 13px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.contacts-text {
+  color: #ababab;
+  text-decoration: none;
+  padding-left: 27px;
+  line-height: 20.97px;
+}
+.contacts-item {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px #5a5a5a dashed;
+}
+address {
+  font-style: normal;
+}
+.fas {
+  margin-right: 7px;
+}
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+}
+.language {
+  width: 100px;
+  height: 100px;
+  border: 6px solid #5c5c5c;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+.language:nth-child(3) {
+  margin-bottom: 0;
+}
+.language-text {
+  text-transform: uppercase;
+  font-size: 11px
+}
+.languages-per {
+  font-size: 15px;
+  font-weight: 600;
+}
+.lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.line {
+  display: block;
+  width: 90px;
+  height: 2px;
+  background-color: #5c5c5c;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.line:nth-child(2) {
+  width: 100px;
+  margin-left: 20px;
+}
+.resume {
+  padding: 25px 30px;
+  flex-basis: 63%;
+  background-color: #fff;
+}
+.resume-wrap {
+  padding: 36px 56px;
+  border: 1px solid rgba(168, 168, 168, 0.44);
+  min-height: 100%;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 38px;
+}
+.logo-img {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #39383a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 17px;
+  margin-right: 17px;
+}
+.logo-line {
+  width: 43px;
+  height: 2px;
+  background-color: #39383a;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.logo-lines_left .logo-line:nth-child(2) {
+  margin-right: 20px;
+  width: 55px;
+}
+.logo-lines_right .logo-line:nth-child(2) {
+  margin-left: 20px;
+  width: 55px;
+}
+.about {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.name {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 10.75px;
+  margin-bottom: 10px;
+}
+.position {
+  display: inline-block;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #808080;
+  margin-bottom: 30px;
+}
+.about-address {
+  font-size: 13px;
+  margin-bottom: 15px;
+  font-family: Roboto;
+}
+.about-contacts {
+  font-size: 8px;
+}
+.about-contacts__link {
+  text-decoration: none;
+  color: #777777;
+}
+.heading_dark {
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 37px;
+}
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+.list-item {
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 2px dashed #ececec;
+}
+.list-item:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #000;
+}
+.list-item__title {
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}.list-item__date {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.list-item__text {
+  font-size: 10px;
+  color: #777;
+}
+.list-item_non-border {
+  border: none;
+}
+.heading_skills {
+  margin-bottom: 48px;
+}
+.skills-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.skills-list__item {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+}
+.level {
+  width: 70%;
+  height: 8px;
+  border: 1px solid #39383a;
+  position: relative;
+}
+.level:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #898989;
+}
+.level-80:before {
+  width: 80%;
+}
+.level-90:before {
+  width: 90%;
+}
+.level-70:before {
+  width: 70%;
+}
+.level-60:before {
+  width: 60%;
+}
+.level-50:before {
+  width: 50%;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    width: 70%;
+  }
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+    border: 3px solid #fff;
+    margin: auto;
+    margin-top: 40px;
+  }
+  .profile {
+    position: relative;
+  }
+  .profile:before {
+    content: '';
+    width: 100%;
+    height: 150px;
+    background-color: #03A9F4;
+    display: block;
+    position: absolute;
+  }
+  .profile-photo {
+    position: relative;
+    z-index: 0;
+  }
+  .lines {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+  .resume {
+    padding: 10px;
+  }
+  .resume-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .list-item__title {
+    font-size: 14px;
+  }
+  .list-item__date {
+    font-size: 12px;
+  }
+  .list-item__text {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .about-contacts__link {
+    display: block;
+    font-size: 13px;
+  }
+}
+@media (max-width: 567px) {
+  .logo-img {
+    width: 70px;
+    height: 70px;
+  }
+  .logo-lines {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    display: none;
+  }
+  .container {
+    min-width: 320px;
+  }
+  .name {
+    letter-spacing: normal;
+  }
+  .level {
+    width: 50%;
+  }
+  
+}
+    </style>
+ 
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+          <div class="profile-photo">
+            <img src="aman.jpg" alt="aman" width="450px" height="300px">
+          </div>
+          <div class="profile-info">
+            <h2 class="heading heading-light">
+            Profile
+          </h2>
+          <p class="profile-text">
+            I have been doing Web Development for the last 2 years and
+have worked with a good number of teams on a number of
+projects. I not only put my entire knowledge into work but also
+come up with creative and professional solutions to problems
+which others might not. My main target while making a
+website or any component is to make it functionally efficient
+and extremely user-friendly. Skills: HTML, CSS, JS, React,
+Mongodb If you hire me, I assure you to get the given work
+done before deadlines and I would blend in with your team as
+well to get a better collaborative outcome
+          </p>
+            <div class="contacts">
+              <div class="contacts-item">
+                 <h3 class="contacts-title">
+                   <i class="fas fa-phone-volume"></i>
+                   Phone
+                </h3>
+                <a href="tel:+91 8319588262" class="contacts-text">+91 8319588262</a>
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                   <i class="fas fa-envelope"></i>
+                   Email
+                </h3>
+                <a href="mailto:amanpatel8497@gamil.com" class="contacts-text">amanpatel8497@gamil.com</a>
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                   <i class="fas fa-globe-americas"></i>
+                   linkedin
+                </h3>
+                <a class="about-contacts__link" href="https://www.linkedin.com/in/aman-patel-015414232/">
+                  <b>Link</b>: https://www.linkedin.com/in/aman-patel-015414232/</a> <br>
+          
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                   <i class="fas fa-globe-americas"></i>
+                   GitHub
+                </h3>
+                <a class="about-contacts__link" href="https://github.com/Amanpatel83">
+                  <b>Link</b>: https://github.com/Amanpatel83</a> <br>
+          
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                   <i class="fas fa-globe-americas"></i>
+                   CodeChef
+                </h3>
+                <a class="about-contacts__link" href="https://www.codechef.com/users/ap3810881">
+                  <b>Link</b>: https://www.codechef.com/users/ap3810881</a> <br>
+              
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                   <i class="fas fa-globe-americas"></i>
+                   LeetCode
+                </h3>
+      
+                <a class="about-contacts__link" href="https://leetcode.com/Amanpatel2025/">
+                  <b>Link</b>: https://leetcode.com/Amanpatel2025/</a> <br>
+                
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                   <i class="fas fa-globe-americas"></i>
+                   GFG
+                </h3>
+                <a class="about-contacts__link" href="https://auth.geeksforgeeks.org/user/amanpatel8497/">
+                  <b>Link</b>: https://auth.geeksforgeeks.org/user/amanpatel8497/</a> <br>
+              
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                   <i class="fas fa-globe-americas"></i>
+                   CodingNinjas
+                </h3>
+                  <a class="about-contacts__link" href="https://www.codingninjas.com/studio/profile/amanpatel8497">
+                    <b>Link</b>: https://www.codingninjas.com/studio/profile/amanpatel8497</a>
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                   <i class="fas fa-map-marker-alt"></i>
+                   Home
+                </h3>
+                <address class="contacts-text">
+                  C4 Rishipuram Anandnagar, Bhopal, Madhya Pradesh 
+                </address>
+              </div>
+            </div>
+            <h2 class="heading heading-light">Languages</h2>
+            <div class="languages">
+              <div class="language">
+                <span class="language-text">English</span>
+                <strong class="languages-per">70%</strong>
+              </div>
+              <div class="language">
+                <span class="language-text">Hindi</span>
+                <strong class="languages-per">90%</strong>
+              </div>
+              
+              <div class="lines">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="resume">
+          <div class="resume-wrap">
+            <div class="about">
+              <h1 class="name">Aman Patel</h1>
+              <span class="position">Full Stack Developer</span>
+              <address class="about-address">C4 Rishipuram Anandnagar, Bhopal, Madhya Pradesh</address>
+              <div class="about-contacts">  
+                <a class="about-contacts__link" href="#">
+                  <b>t</b>: +91 8319588262</a> |
+                <a class="about-contacts__link" href="#">
+                  <b>e</b>: amanpatel8497@gmail.com </a> 
+      
+              </div>
+            </div>
+            <div class="experience">
+              <h2 class="heading heading_dark">
+                Experience
+              </h2>
+              <ul class="list">
+                <li class="list-item">
+                  <h4 class="list-item__title">Bharat Intern</h4>
+                  <span class="list-item__date">Aug 2023 - Sep 2023</span>
+                  <p class="list-item__text">A full-stack internship with hands-on projects provides a holistic learning experience, enabling interns to develop end-to-end web applications. This practical approach enhances skills and fosters real-world problem-solving abilities.</p>
+                </li>
+                
+              </ul>
+            </div>
+            <div class="experience">
+              <h2 class="heading heading_dark">
+                TRAININGS 
+              </h2>
+              <ul class="list">
+                <li class="list-item">
+                  <h4 class="list-item__title">Full Stack Web Developer-[MERN Stack]</h4>
+                  <span class="list-item__date">Dec 2022 - May 2023</span>
+                  <p class="list-item__text">Certificate of completion -4.5Month</p>
+                </li>
+                
+              </ul>
+            </div>
+            <div class="experience">
+              <h2 class="heading heading_dark">
+                PERSONAL PROJECTS
+              </h2>
+              <ul class="list">
+                <li class="list-item">
+                  <h4 class="list-item__title">College Result generater</h4>
+                  <span class="list-item__date">Jan 2023 - Feb 2023</span>
+                  <p class="list-item__text">https://completeproject.amanpatel60.repl.co/</p>
+                </li>
+                <li class="list-item">
+                  <h4 class="list-item__title">Portfolio Website</h4>
+                  <span class="list-item__date">Mar 2023 - Apr 2023</span>
+                  <p class="list-item__text">https://amanpatel83.github.io/mywebsite/</p>
+                </li>
+                
+              </ul>
+            </div>
+            <div class="education">
+              <h2 class="heading heading_dark">
+                Education
+              </h2>
+              <ul class="list">
+                <li class="list-item list-item_non-border">
+                  <h4 class="list-item__title">Technocrates institute of technology</h4>
+                  <span class="list-item__date">Jul 2021 -  Jun 2025</span>
+                  <p class="list-item__text">Btech -Computer Science</p>
+                  <p class="list-item__text">Current 8.01CGPA</p>
+                </li>
+                <li class="list-item list-item_non-border">
+                    <h4 class="list-item__title">Gurukul Gyan Mandir</h4>
+                    <span class="list-item__date">Jul 2019 - Jun 2020</span>
+                    <p class="list-item__text">class 12th</p>
+                    <p class="list-item__text">73.4%</p>
+                  </li>
+                  <li class="list-item list-item_non-border">
+                    <h4 class="list-item__title">Gurukul Gyan Mandir</h4>
+                    <span class="list-item__date">Jul 2017 - Jun 2018</span>
+                    <p class="list-item__text">class 10th</p>
+                    <p class="list-item__text">86%</p>
+                  </li>
+              </ul>
+            </div>
+            <div class="skills">
+              <h2 class="heading heading_dark heading_skills">
+                Skills
+              </h2>
+              <ul class="skills-list">
+                <li class="skills-list__item">
+                  C++
+                  <div class="level level-90"></div>
+                </li>
+                <li class="skills-list__item">
+                  JAVA
+                  <div class="level level-80"></div>
+                </li>
+                <li class="skills-list__item">
+                 DSA
+                  <div class="level level-80"></div>
+                </li>
+                <li class="skills-list__item">
+                  Python
+                  <div class="level level-50"></div>
+                </li>
+                <li class="skills-list__item">
+                  HTML
+                  <div class="level level-90"></div>
+                </li>
+                <li class="skills-list__item">
+                  CSS
+                  <div class="level level-80"></div>
+                </li>
+                <li class="skills-list__item">
+                  JavaScript
+                  <div class="level level-70"></div>
+                </li>
+                <li class="skills-list__item">
+                  React
+                  <div class="level level-70"></div>
+                </li>
+                <li class="skills-list__item">
+                   Mongodb
+                  <div class="level level-60"></div>
+                </li>
+                <li class="skills-list__item">
+                  Express
+                  <div class="level level-70"></div>
+                </li>
+                <li class="skills-list__item">
+                   Operating system
+                  <div class="level level-80"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
